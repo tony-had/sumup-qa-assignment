@@ -10,7 +10,11 @@ import org.testng.annotations.Parameters
 import util.Constants
 import java.net.URL
 
-
+/**
+ * Test base class.
+ *
+ * This test base class implements a set up and tear down function used by all tests that derive from it.
+ */
 abstract class TestBase() {
     lateinit var driver: WebDriver
         private set
@@ -18,6 +22,14 @@ abstract class TestBase() {
     private lateinit var driverUrl: String
     private lateinit var caps: DesiredCapabilities
 
+    /**
+     * Parametrized test class set up method.
+     * Extra care must be taken to pass strings that Browserstack will recognize
+     * @param os target operating system
+     * @param os_version target operating system's version
+     * @param browser target browser
+     * @param browser_version target browser version
+     */
     @BeforeTest
     @Parameters("os", "os_version", "browser", "browser_version")
     fun setUpClass(os: String, os_version: String, browser: String, browser_version: String) {
@@ -38,6 +50,9 @@ abstract class TestBase() {
         caps.setCapability("browser_version", browser_version)
     }
 
+    /**
+     * Set up the remote driver before each test method and open the page.
+     */
     @BeforeMethod
     fun setUpMethod() {
         driver = RemoteWebDriver(URL(Constants.browserstackDriverUrl), caps)
@@ -46,6 +61,9 @@ abstract class TestBase() {
         driver.get(Constants.baseUrl)
     }
 
+    /**
+     * Quit the driver after each test method.
+     */
     @AfterMethod
     fun tearDownMethod() {
         driver.quit()

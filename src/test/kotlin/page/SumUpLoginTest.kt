@@ -6,8 +6,22 @@ import util.Constants
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
+/**
+ * Login tests.
+ */
 class SumUpLoginTest : TestBase() {
 
+    /**
+     * Log in with an account that is not yet completed.
+     * Verify no transactions are displayed on the Sales page.
+     * 
+     * 1. Open the SumUp website.
+     * 2. Proceed to the local website from the modal dialog.
+     * 3. Go to the login page.
+     * 4. Login with an incomplete account.
+     * 5. Go to the Sales page.
+     * 6. Verify the Sales page is opened and look for a transaction list.
+     */
     @Test
     fun loginWithIncompletePersonalDetails() {
         val geoModalDialog = GeoModalDialog(driver)
