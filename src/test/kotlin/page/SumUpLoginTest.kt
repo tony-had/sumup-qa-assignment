@@ -14,7 +14,7 @@ class SumUpLoginTest : TestBase() {
     /**
      * Log in with an account that is not yet completed.
      * Verify no transactions are displayed on the Sales page.
-     * 
+     *
      * 1. Open the SumUp website.
      * 2. Proceed to the local website from the modal dialog.
      * 3. Go to the login page.
