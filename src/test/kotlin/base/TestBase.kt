@@ -7,8 +7,7 @@ import org.testng.annotations.AfterMethod
 import org.testng.annotations.BeforeMethod
 import org.testng.annotations.BeforeTest
 import org.testng.annotations.Parameters
-import util.Util
-import java.net.URI
+import util.Constants
 import java.net.URL
 
 
@@ -47,7 +46,7 @@ abstract class TestBase() {
         driver = RemoteWebDriver(URL(driverUrl), caps)
         driver.manage().window().maximize()
 
-        driver.get(URI(Util.getProperties("baseUrl")).toString())
+        driver.get(Constants.baseUrl)
     }
 
     @AfterMethod
