@@ -1,0 +1,7 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="All Suites">
+    <suite-files>
+        <suite-file path="suites/windows.xml"/>
+        <suite-file path="suites/macos.xml"/>
+    </suite-files>
+</suite>

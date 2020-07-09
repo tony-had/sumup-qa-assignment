@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="macOS Catalina Smoke Test" verbose="1">
+    <parameter name="os" value="OS X" />
+    <parameter name="os_version" value="Catalina" />
+    <parameter name="browser_version" value="latest" />
+    <test name="Safari 13_1">
+        <parameter name="browser" value="Safari" />
+        <parameter name="browser_version" value="13.1" />
+        <classes>
+            <class name="page.SumUpLoginTest" />
+        </classes>
+    </test>
+    <test name="Edge Latest">
+        <parameter name="browser" value="Edge" />
+        <classes>
+            <class name="page.SumUpLoginTest" />
+        </classes>
+    </test>
+    <test name="Chrome Latest">
+        <parameter name="browser" value="Chrome" />
+        <classes>
+            <class name="page.SumUpLoginTest" />
+        </classes>
+    </test>
+    <test name="Firefox Latest">
+        <parameter name="browser" value="Firefox" />
+        <classes>
+            <class name="page.SumUpLoginTest" />
+        </classes>
+    </test>
+</suite>
