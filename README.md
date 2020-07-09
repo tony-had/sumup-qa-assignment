@@ -31,6 +31,8 @@ Right-click on `testng.xml` in the Project panel and Run it. This will run the f
 - Windows 10 Smoke Test - login test on IE 11, Edge latest, Chrome latest, Firefox latest
 - macOS Catalina Smoke Test - login test on Safari 13.1, Edge latest, Chrome latest, Firefox latest
 
+Result details will be available under Build 1 on the [Browserstack dashboard](https://automate.browserstack.com/dashboard/v2/).
+
 ## Project Structure
 - `src/main/kotlin`
     - `base` - base page classes
