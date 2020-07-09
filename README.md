@@ -1,6 +1,6 @@
 # SumUp QA Demo
 
-Basic automated test framework using Kotlin, Selenium and Browserstack.
+Basic automated test framework using Kotlin, Selenium, TestNG and Browserstack.
 
 The implemented page objects allow a simple login test to be executed that verifies no transactions can be present for an incomplete account.
 
@@ -8,7 +8,7 @@ The implemented page objects allow a simple login test to be executed that verif
 
 ### Prerequisites
 
-- [IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) with default plugins (Maven, TestNG, etc.)
 - [Java JDK 1.8 (e.g. 8u251)](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
 - Joining the [SumUp QA Assignment team](https://accounts.browserstack.com/jointeam/998c1774bbd1801d6bfcb2df4eaad7d7) in Browserstack
 
@@ -27,54 +27,25 @@ The implemented page objects allow a simple login test to be executed that verif
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Right-click on `testng.xml` in the Project panel and Run it. This will run the following suites:
+- Windows 10 Smoke Test - login test on IE 11, Edge latest, Chrome latest, Firefox latest
+- macOS Catalina Smoke Test - login test on Safari 13.1, Edge latest, Chrome latest, Firefox latest
 
-### Break down into end to end tests
+## Project Structure
+- `src/main/kotlin`
+    - `base` - base page classes
+    - `page` - concrete page classes
+    - `util` - utilities, constants
+- `src/test/kotlin`
+    - `base` - base test classes
+    - `page` - concrete page test classes
+- `suites` - TestNG test suite files
 
-Explain what these tests test and why
+## Known Issues
+- The IE 11 test fails, because users cannot log in to the SumUp web app from IE 11
+- The Safari 13.1 test will sometimes randomly navigate to Dashboard instead of Sales page
 
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+## TODO
+- [ ] Add support for testing at different windows sizes (e.g. where the nav bar is collapsed)
+- [ ] Create custom locator strategy for locating elements by their `data-selector` attribute
+- [ ] Initialize page objects differently depending on whether the test is running on desktop or mobile app
