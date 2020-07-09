@@ -12,8 +12,11 @@ class SideNavFragment(private val driver: WebDriver) : BasePage(driver) {
     @FindBy(xpath = "//*[@data-selector='SIDENAV.NAV_ITEMS.SALES']")
     private var salesButton: WebElement? = null
 
+    @FindBy(xpath = "//*[@data-selector='SIDENAV.NAV_ITEMS.REFERRALS']")
+    private var referralButton: WebElement? = null
+
     fun goToSalesPage(): SalesPage {
-        WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(salesButton))
+        WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(referralButton))
         salesButton?.click()
         return SalesPage(driver)
     }
