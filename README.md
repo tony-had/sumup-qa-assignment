@@ -6,33 +6,24 @@ The implemented page objects allow a simple login test to be executed that verif
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
+- [Java JDK 1.8 (e.g. 8u251)](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
+- Joining the [SumUp QA Assignment team](https://accounts.browserstack.com/jointeam/998c1774bbd1801d6bfcb2df4eaad7d7) in Browserstack
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+1. Clone the repo
+    ```
+    git clone https://github.com/tony-had/sumup-qa-assignment.git
+    ```
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+2. Import the project into IntelliJ IDEA:
+    1. `File > New > Project from Existing Sources`
+    2. Select the directory containing the repo.
+    3. Select `Import project from external model` and choose Maven.
+    4. `Finish`
 
 ## Running the tests
 
