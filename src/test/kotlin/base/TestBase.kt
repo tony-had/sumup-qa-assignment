@@ -22,17 +22,14 @@ abstract class TestBase() {
     @Parameters("os", "os_version", "browser", "browser_version")
     fun setUpClass(os: String, os_version: String, browser: String, browser_version: String) {
         // BrowserStack Setup
-        val username = "tonyhadjiivanov1"
-        val automateKey = "iqG6MeAWtqqRvnS3TFgR"
-        driverUrl = "https://$username:$automateKey@hub-cloud.browserstack.com/wd/hub"
         caps = DesiredCapabilities()
         caps.setCapability("project", "SumUp QA Assignment")
         caps.setCapability("build", "Build 1")
         val testClass = this::class.java.name.split(".").last()
         val infoName = "$testClass - $os $os_version - $browser $browser_version"
         caps.setCapability("name", infoName)
-        caps.setCapability("seleniumVersion", "3.141.59")
-        caps.setCapability("resolution", "1920x1080")
+        caps.setCapability("seleniumVersion", Constants.seleniumVersion)
+        caps.setCapability("resolution", Constants.testResolution)
 
         caps.setCapability("os", os)
         caps.setCapability("os_version", os_version)
@@ -43,7 +40,7 @@ abstract class TestBase() {
 
     @BeforeMethod
     fun setUpMethod() {
-        driver = RemoteWebDriver(URL(driverUrl), caps)
+        driver = RemoteWebDriver(URL(Constants.browserstackDriverUrl), caps)
         driver.manage().window().maximize()
 
         driver.get(Constants.baseUrl)
