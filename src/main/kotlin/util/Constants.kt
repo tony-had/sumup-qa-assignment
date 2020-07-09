@@ -9,4 +9,7 @@ object Constants {
 
     const val seleniumVersion = "3.141.59"
     const val testResolution = "1920x1080"
+
+    const val testAccountEmail = "tony.hadjiivanov@gmail.com"
+    const val testAccountPassword = "%9aA&llTnQ\$t7hn9"
 }

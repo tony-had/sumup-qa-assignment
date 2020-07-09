@@ -2,6 +2,7 @@ package page
 
 import base.TestBase
 import org.testng.annotations.Test
+import util.Constants
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
@@ -12,7 +13,7 @@ class SumUpLoginTest : TestBase() {
         val geoModalDialog = GeoModalDialog(driver)
         val homePage = geoModalDialog.proceedToLocalWebsite()
         val loginPage = homePage.goToLoginPage()
-        val accountPage = loginPage.login("tony.hadjiivanov@gmail.com", "%9aA&llTnQ\$t7hn9")
+        val accountPage = loginPage.login(Constants.testAccountEmail, Constants.testAccountPassword)
         val salesPage = accountPage.goToSalesPage()
         assertTrue(salesPage.transactionSearchBoxIsDisplayed(), "The sales page was not opened.")
         assertFalse(salesPage.transactionListIsDisplayed(), "An incomplete account can not have a transaction history.")
