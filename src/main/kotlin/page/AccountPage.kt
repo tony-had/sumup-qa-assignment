@@ -17,8 +17,8 @@ import org.openqa.selenium.support.ui.WebDriverWait
 class AccountPage(private val driver: WebDriver,
                   private val sideNavFragment: SideNavFragment = SideNavFragment(driver)) : BasePage(driver) {
 
-    @FindBy(xpath = "//*[@data-selector='PERSONAL_DETAILS.SUBMIT']")
-    private val personalDetailsSubmitButton: WebElement? = null
+    @FindBy(xpath = "//*[@data-selector='SUBMIT_BUTTON']")
+    private val payoutDetailsSubmitButton: WebElement? = null
 
     /**
      * Navigates to the Sales page using the side navigation bar.
@@ -27,7 +27,7 @@ class AccountPage(private val driver: WebDriver,
      */
     // TODO: find a more universal way to ensure this page has loaded
     fun goToSalesPage(): SalesPage {
-        WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(personalDetailsSubmitButton))
+        WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(payoutDetailsSubmitButton))
         return sideNavFragment.goToSalesPage()
     }
 }
